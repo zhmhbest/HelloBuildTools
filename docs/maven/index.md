@@ -113,30 +113,30 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 
 ### 清理生命周期
 
-```batch
-REM 删除编译的结果
+```bash
+# 删除编译的结果
 mvn clean
 ```
 
 ### 默认生命周期
 
-```batch
-REM 删除编译的结果
+```bash
+# 删除编译的结果
 mvn clean
 
-REM 编译src/main/java到target目录下
+# 编译src/main/java到target目录下
 mvn compile
 
-REM 编译src/test/java到target目录下
+# 编译src/test/java到target目录下
 mvn test
 
-REM 打包项目到target目录下
+# 打包项目到target目录下
 mvn package
 
-REM 打包项目到本地仓库
+# 打包项目到本地仓库
 mvn install
 
-REM 打包项目到私服
+# 打包项目到私服
 mvn deploy
 ```
 
@@ -151,16 +151,21 @@ mvn deploy
 - `-DarchetypeArtifactId`: 模板类型
 - `-DinteractiveMode`: 是否使用交互模式
 
-```batch
-REM 创建
-REM maven-archetype-quickstart | maven-archetype-webapp
-mvn archetype:generate "-DgroupId=com.zhmh" "-DartifactId=HelloMaven" "-DarchetypeArtifactId=maven-archetype-quickstart" "-DinteractiveMode=false"
+```bash
+# 创建
+# maven-archetype-quickstart | maven-archetype-webapp
+mvn archetype:generate \
+    "-DinteractiveMode=false" \
+    "-DgroupId=org.example" \
+    "-DartifactId=HelloMaven" \
+    "-Dversion=1.0-SNAPSHOT" \
+    "-DarchetypeArtifactId=maven-archetype-quickstart"
 
-REM 编译
+# 编译
 mvn clean compile
 
-REM 执行
-java -cp "target/classes" com.zhmh.App
+# 执行
+java -cp "target/classes" org.example.App
 ```
 
 ### 源码与文档
