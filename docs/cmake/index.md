@@ -60,8 +60,8 @@ add_executable(Hello main.c)
 >- 添加环境：`..\Cygwin\bin`
 
 ```bash
-cmake -G "CodeBlocks - Unix Makefiles" -B build-cygwin -S .
-pushd build-cygwin; make; ./Hello; popd
+cmake -G "CodeBlocks - Unix Makefiles" -B "build-cygwin" -S .
+cmake --build "build-cygwin"
 # 必须在Cygwin环境下运行
 ```
 
@@ -71,8 +71,8 @@ pushd build-cygwin; make; ./Hello; popd
 >- 添加环境：`..\cmake\cmake-${version}-win64-x64\bin`
 
 ```batch
-cmake -G "CodeBlocks - MinGW Makefiles" -B build-mingw -S .
-pushd build-mingw && mingw32-make && .\Hello.exe && popd
+cmake -G "CodeBlocks - MinGW Makefiles" -B "build-mingw" -S .
+cmake --build "build-mingw"
 ```
 
 ## 变量
